@@ -1,5 +1,5 @@
 
-const log=require('./logger');
+const logger=require('./logger');
 function helloworld(name)
 {
    console.log('Hello world ' + name); // global
@@ -7,5 +7,6 @@ function helloworld(name)
 }
 
 helloworld('krishna ');
-log('Krishna ');
+logger.log('Krishna ');
 
+logger.memoryPrint();
