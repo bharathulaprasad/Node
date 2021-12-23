@@ -15,7 +15,7 @@ logger.memoryPrint();
 
 // read current directory in asynchronous way
 fs.readdir('./', function(err,files) {
-   if(err) console.log('Error',error);
+   if(err) console.log('Error',err);
    else console.log('Files', files);
 
 });
