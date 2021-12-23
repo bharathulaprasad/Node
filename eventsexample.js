@@ -1,11 +1,14 @@
-const EventEmitter = require('events'); // EventEmitter class
 
-const emitter = new EventEmitter();
+const Logger = require('./loggeremitter');
 
-//addListener has alias called on.
-emitter.on('messageLogged', (arg) => {
-    console.log('Listener is called', arg);
+
+const logger= new Logger();
+logger.on('messageLogged',(arg)=>{
+    console.log('Listener called', arg);
 })
+
 //Emit means something like noise, and raise an alarm.
-emitter.emit('messageLogged',{id:1, url: 'http://google.com'}) ;
+logger.log('messageLogged',{id:1, url: 'http://google.com'}) ;
+
+logger.log('messageLogged something else',{id:1, url: 'http://yahoo.com'}) ;
 
